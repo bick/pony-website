@@ -1,0 +1,42 @@
+@import "../shared/fonts.scss";
+@import "../shared/colors.scss";
+
+.hero {
+    padding: 3rem 0;
+    text-align: center;
+    background: $black;
+    position: relative; // This is necessary for pseudo-elements to position themselves accordingly
+
+    // Pseudo-element for the blur background
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1; // Ensure it's behind the content
+        background: inherit; // Inherit the black background color
+        filter: blur(10px); // Adjust the blur value as needed
+    }
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 900;
+        color: $white; // Assuming you have a white color variable defined
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        opacity: .65;
+        color: $white; // Assuming you have a white color variable defined
+    }
+
+    p {
+        font-size: 1.125rem;
+        opacity: .75;
+        margin-bottom: 1rem;
+        color: $white; // Assuming you have a white color variable defined
+    }
+}
